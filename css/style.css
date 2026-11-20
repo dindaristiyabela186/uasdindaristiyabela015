@@ -1,0 +1,936 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&display=swap');
+
+/* =========================
+   WARNA UTAMA UDB
+========================= */
+:root {
+    --green: #2d438e;
+    --dark: #263b7d;
+    --mint: #f0f2fa;
+    --text: #58627d;
+    --cream: #fbfdfb;
+    --line: #e1e5f0;
+    --red: #e52332;
+    --blue: #293e83;
+}
+
+/* =========================
+   PENGATURAN DASAR
+========================= */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Nunito Sans', Arial, sans-serif;
+    color: var(--dark);
+    background: #fff;
+    line-height: 1.7;
+    position: relative;
+}
+
+a {
+    color: var(--green);
+    text-decoration: none;
+}
+
+.container {
+    width: min(1120px, 90%);
+    margin: auto;
+}
+
+/* =========================
+   BACKGROUND WATERMARK UDB
+========================= */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image: url("../images/udb-logo.jpg");
+    background-repeat: no-repeat;
+    background-position: center 55%;
+    background-size: min(390px, 70vw) auto;
+    opacity: 0.045;
+}
+
+/* =========================
+   HEADER
+========================= */
+.header {
+    background: linear-gradient(110deg, #293e83, #e52332);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid var(--line);
+}
+
+.nav-wrap {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* LOGO DAN BRAND */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    color: white;
+    font-weight: 900;
+    font-size: 17px;
+    line-height: 1.15;
+}
+
+/* LOGO UDB UTUH */
+.udb-logo {
+    width: 55px;
+    height: 60px;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
+    border-radius: 0;
+    background: transparent;
+}
+
+.brand-green {
+    display: block;
+    color: white;
+}
+
+.brand-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 11px;
+    background: white;
+    color: var(--blue);
+    display: grid;
+    place-items: center;
+    font-size: 26px;
+}
+
+.style3 {
+    font-size: xx-large;
+    color: white;
+}
+
+.style4 {
+    font-size: large;
+}
+
+/* =========================
+   NAVIGASI MENU
+========================= */
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav a {
+    font-size: 12px;
+    font-weight: 800;
+    color: white;
+    padding: 9px 10px;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+/* MENU AKTIF */
+.nav a.active {
+    background: white;
+    color: var(--blue);
+}
+
+/* MENU SAAT DISOROT */
+.nav a:hover {
+    background: #e52332;
+    color: white;
+}
+
+.menu-toggle {
+    display: none;
+    border: 0;
+    background: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 21px;
+    color: var(--blue);
+}
+
+/* =========================
+   HERO / HALAMAN UTAMA
+========================= */
+.hero {
+    background: linear-gradient(
+        115deg,
+        #f1f3fb 0%,
+        #fff 52%,
+        #fff1f2 100%
+    );
+    padding: 76px 0 72px;
+    overflow: hidden;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr .85fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.eyebrow {
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 900;
+    color: var(--green);
+}
+
+h1 {
+    font-size: clamp(34px, 5vw, 52px);
+    line-height: 1.16;
+    margin: 14px 0 20px;
+    letter-spacing: -1.4px;
+}
+
+h1 span {
+    color: var(--green);
+}
+
+.hero-text > p {
+    max-width: 570px;
+    color: var(--text);
+    font-size: 16px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 27px 0 16px;
+}
+
+/* TOMBOL */
+.btn {
+    display: inline-block;
+    background: linear-gradient(
+        110deg,
+        #293e83,
+        #4655a0 55%,
+        #e52332
+    );
+    color: #fff;
+    padding: 12px 21px;
+    border: 0;
+    border-radius: 9px;
+    font: 800 14px 'Nunito Sans', sans-serif;
+    cursor: pointer;
+    box-shadow: 0 5px 12px #18866d22;
+}
+
+.btn:hover {
+    background: linear-gradient(110deg, #233879, #d51e2d);
+    color: #fff;
+}
+
+.btn-light {
+    background: #fff;
+    color: var(--blue);
+    border: 1px solid #d9deef;
+    box-shadow: none;
+}
+
+.hero-note {
+    font-size: 12px !important;
+    color: #87958f !important;
+}
+
+/* ILUSTRASI HERO */
+.hero-art {
+    height: 340px;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.circle-one {
+    width: 300px;
+    height: 300px;
+    background: #e3e7f7;
+}
+
+.circle-two {
+    width: 220px;
+    height: 220px;
+    background: #f6dfe2;
+    right: 0;
+    top: 10px;
+}
+
+.liver-card {
+    position: relative;
+    background: #fff;
+    width: 245px;
+    height: 220px;
+    border-radius: 28px;
+    box-shadow: 0 20px 50px #214f3b22;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 9px;
+    text-align: center;
+    padding: 20px;
+}
+
+.liver-symbol {
+    width: 85px;
+    height: 85px;
+    border-radius: 26px;
+    background: #fff0f1;
+    color: var(--red);
+    font-size: 49px;
+    display: grid;
+    place-items: center;
+}
+
+.liver-card strong {
+    font-size: 17px;
+}
+
+.liver-card span {
+    font-size: 12px;
+    color: var(--text);
+}
+
+.mini-tag {
+    position: absolute;
+    bottom: 24px;
+    left: 10px;
+    background: #fff;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 800;
+    box-shadow: 0 7px 20px #214f3b18;
+}
+
+/* =========================
+   BAGIAN SECTION
+========================= */
+.section {
+    padding-top: 65px;
+    padding-bottom: 70px;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 35px;
+}
+
+.section-heading h2,
+.quote-box h2 {
+    font-size: 29px;
+    margin: 8px 0;
+}
+
+.section-heading p,
+.info-card p {
+    color: var(--text);
+}
+
+/* KARTU INFORMASI */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.info-card,
+.prevention-card,
+.contact-card {
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 25px;
+    background: #fff;
+    box-shadow: 0 7px 25px #1d48350a;
+}
+
+.card-icon {
+    background: var(--mint);
+    color: var(--green);
+    font-weight: 900;
+    border-radius: 10px;
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+}
+
+.info-card h3 {
+    margin: 17px 0 7px;
+}
+
+.info-card p {
+    font-size: 14px;
+    min-height: 68px;
+}
+
+.info-card a {
+    font-weight: 900;
+    font-size: 13px;
+}
+
+/* =========================
+   QUOTE DAN SOFT SECTION
+========================= */
+.soft-section {
+    background: #f4f5fb;
+    padding: 42px 0;
+}
+
+.quote-box {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.quote-mark {
+    font-size: 70px;
+    line-height: 1;
+    color: #9ca9d5;
+}
+
+.quote-box h2 {
+    font-size: 24px;
+}
+
+.quote-box p {
+    color: var(--text);
+    margin: 0;
+}
+
+.quote-box .btn {
+    margin-left: auto;
+    white-space: nowrap;
+}
+
+/* =========================
+   PAGE BANNER
+========================= */
+.page-banner {
+    background: linear-gradient(
+        110deg,
+        #f0f2fa 0%,
+        #fff 65%,
+        #fff0f1 100%
+    );
+    padding: 55px 0 50px;
+}
+
+.page-banner h1 {
+    font-size: 39px;
+    margin: 8px 0;
+}
+
+.page-banner p {
+    color: var(--text);
+    margin: 0;
+}
+
+/* =========================
+   CONTENT SECTION
+========================= */
+.content-section {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 55px;
+    padding-top: 55px;
+    padding-bottom: 75px;
+}
+
+.content-main h2 {
+    font-size: 22px;
+    margin: 26px 0 9px;
+}
+
+.content-main h2:first-child {
+    margin-top: 0;
+}
+
+.content-main p,
+.content-main li {
+    color: var(--text);
+}
+
+.check-list {
+    padding-left: 22px;
+}
+
+.check-list li {
+    padding: 5px 0;
+}
+
+.side-note {
+    align-self: start;
+    background: #f4f5fb;
+    border-radius: 16px;
+    padding: 25px;
+    border: 1px solid var(--line);
+}
+
+.side-note h3 {
+    margin: 5px 0 8px;
+}
+
+.side-note p {
+    font-size: 14px;
+    color: var(--text);
+}
+
+.side-icon {
+    font-size: 35px;
+    color: var(--red);
+}
+
+/* GEJALA */
+.symptom-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.symptom {
+    background: #f3f5fb;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 14px;
+    text-align: center;
+    font-weight: 800;
+    font-size: 13px;
+}
+
+.alert {
+    background: #fff8e9;
+    border-left: 4px solid #e4b45e;
+    border-radius: 8px;
+    padding: 15px 18px;
+    margin: 24px 0;
+    color: #705a32;
+    font-size: 14px;
+}
+
+/* =========================
+   PENCEGAHAN
+========================= */
+.prevention-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.prevention-card {
+    padding: 24px;
+}
+
+.number {
+    font-size: 13px;
+    font-weight: 900;
+    color: var(--green);
+    background: var(--mint);
+    padding: 7px 10px;
+    border-radius: 8px;
+}
+
+.prevention-card h3 {
+    margin: 18px 0 7px;
+}
+
+.prevention-card p {
+    font-size: 14px;
+    color: var(--text);
+    margin: 0;
+}
+
+/* =========================
+   FORM KONSULTASI
+========================= */
+.form-section {
+    padding: 60px 0 80px;
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 55px;
+    align-items: start;
+}
+
+.form-intro h2 {
+    font-size: 28px;
+    line-height: 1.25;
+    margin-top: 0;
+}
+
+.form-intro p {
+    color: var(--text);
+}
+
+.form-tip {
+    margin-top: 25px;
+    background: var(--mint);
+    padding: 17px;
+    border-radius: 10px;
+    color: #35477f;
+    font-size: 13px;
+}
+
+.form-card {
+    border: 1px solid var(--line);
+    border-radius: 17px;
+    padding: 30px;
+    box-shadow: 0 10px 35px #1d48350c;
+}
+
+.form-card label {
+    display: block;
+    font-size: 13px;
+    font-weight: 900;
+    margin: 13px 0 6px;
+}
+
+.form-card input,
+.form-card textarea {
+    width: 100%;
+    border: 1px solid #dce8e1;
+    border-radius: 8px;
+    padding: 12px 13px;
+    font: 14px 'Nunito Sans', sans-serif;
+    outline: none;
+    background: #fcfefd;
+}
+
+.form-card input:focus,
+.form-card textarea:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px #2d438e17;
+}
+
+.form-card textarea {
+    resize: vertical;
+}
+
+.submit-btn {
+    margin-top: 12px;
+}
+
+.form-error {
+    color: #b53b3b;
+    font-size: 13px;
+    min-height: 15px;
+}
+
+.success-message {
+    text-align: center;
+    padding: 20px;
+}
+
+.success-message h2 {
+    color: var(--green);
+}
+
+.success-message p {
+    color: var(--text);
+}
+
+/* NOTIFIKASI EMAIL */
+.email-notice {
+    text-align: left;
+    background: linear-gradient(105deg, #eef1fb, #fff0f1);
+    border-left: 4px solid var(--blue);
+    border-radius: 9px;
+    padding: 15px 17px;
+    margin-bottom: 20px;
+    color: var(--blue);
+    font-size: 14px;
+}
+
+.email-notice strong {
+    color: var(--red);
+}
+
+/* =========================
+   KONTAK DAN REFERENSI
+========================= */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.contact-card p {
+    color: var(--text);
+    font-size: 14px;
+}
+
+.contact-icon {
+    font-size: 30px;
+    color: var(--blue);
+}
+
+.reference-box {
+    margin-top: 35px;
+    padding: 28px;
+    border-radius: 15px;
+    background: #f5f6fb;
+}
+
+.reference-box h2 {
+    margin-top: 0;
+}
+
+.reference-box li {
+    padding: 5px 0;
+}
+
+.small-note {
+    font-size: 12px;
+    color: #75857d;
+    margin-top: 20px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+    background: linear-gradient(110deg, #293e83, #e52332);
+    color: #fff;
+    padding: 30px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.footer p {
+    font-size: 12px;
+    color: #f0eaf0;
+    margin: 5px 0;
+}
+
+.footer small {
+    font-size: 11px;
+    color: #e6dce5;
+}
+
+.footer strong {
+    color: #fff;
+}
+
+/* =========================
+   RESPONSIVE TABLET
+========================= */
+@media (max-width: 950px) {
+    .nav {
+        gap: 0;
+    }
+
+    .nav a {
+        font-size: 11px;
+        padding: 8px 6px;
+    }
+
+    .hero-grid {
+        gap: 20px;
+    }
+
+    .content-section {
+        gap: 25px;
+    }
+}
+
+/* =========================
+   RESPONSIVE HP
+========================= */
+@media (max-width: 760px) {
+
+    .nav-wrap {
+        min-height: 68px;
+    }
+
+    .udb-logo {
+        width: 43px;
+        height: 48px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        padding: 12px 5%;
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 12px 20px #183b3510;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .nav.show {
+        display: flex;
+    }
+
+    .nav a {
+        font-size: 13px;
+        padding: 10px;
+        color: var(--blue);
+    }
+
+    .nav a.active {
+        background: var(--blue);
+        color: white;
+    }
+
+    .nav a:hover {
+        background: var(--red);
+        color: white;
+    }
+
+    .hero {
+        padding: 48px 0;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-art {
+        height: 280px;
+    }
+
+    .circle-one {
+        width: 240px;
+        height: 240px;
+    }
+
+    .circle-two {
+        width: 170px;
+        height: 170px;
+    }
+
+    .liver-card {
+        width: 220px;
+        height: 195px;
+    }
+
+    .info-grid,
+    .prevention-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-card p {
+        min-height: 0;
+    }
+
+    .quote-box {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .quote-box .btn {
+        margin-left: 0;
+    }
+
+    .content-section,
+    .form-section {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding-top: 35px;
+    }
+
+    .side-note {
+        order: 2;
+    }
+
+    .symptom-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .page-banner {
+        padding: 40px 0;
+    }
+
+    .page-banner h1 {
+        font-size: 32px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .form-card {
+        padding: 22px;
+    }
+
+    body::before {
+        background-size: min(300px, 75vw);
+    }
+}
+/* LOGO UDB BERBENTUK KOTAK */
+.udb-logo {
+    width: 65px;
+    height: 65px;
+    border-radius: 10px !important;
+    object-fit: contain;
+    background: white;
+    padding: 3px;
+    vertical-align: middle;
+}
+
+/* LOGO UDB PADA FOOTER */
+.footer-content::before {
+    content: "";
+    display: block;
+    width: 65px;
+    height: 65px;
+	object-fit: contain;
+    flex-shrink: 0;
+    background-image: url("../images/udb-logo.jpg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid white;
+    padding: 3px;
+	vertical-align:middle;
+}
+
+@media (max-width: 760px) {
+    .udb-logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .footer-content::before {
+        width: 55px;
+        height: 55px;
+    }
+}
