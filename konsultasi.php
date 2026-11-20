@@ -30,9 +30,9 @@ include "header.php";
     <div class="success-message">
       <div class="email-notice">
         <div align="justify"><strong>Permintaan konsultasi berhasil dikirim!</strong><br>
-          Terima kasih telah menghubungi kami. Pertanyaan Anda telah kami terima. Informasi atau jawaban selanjutnya dapat disampaikan melalui email yang Anda cantumkan.</div>
+          Terima kasih telah mengunjungi website kami. Jawaban akan dikirim melalui email Anda.</div>
       </div>
-        <h2>Terima kasih, <?php echo htmlspecialchars($nama); ?>!</h2>
+        <h2>Terima kasih telah mengunjungi website kami!</h2>
         <p>Data formulir berhasil diterima oleh halaman website ini.</p>
         <a class="btn" href="konsultasi.php">Isi formulir lagi</a>
     </div>
@@ -40,7 +40,7 @@ include "header.php";
     <?php if ($error): ?><div class="alert"><?php echo $error; ?></div><?php endif; ?>
     <form id="consultForm" method="POST" action="konsultasi.php" novalidate>
         <label for="nama">Nama lengkap</label>
-        <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" value="<?php echo htmlspecialchars($nama); ?>" required />
+        <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" value="<?php echo htmlspecialchars($nama); ?>" autocomplete="off" required />
         <label for="email">Email</label><input type="email" id="email" name="email" placeholder="nama@email.com" value="<?php echo htmlspecialchars($email); ?>" required>
         <label for="telepon">Nomor telepon</label><input type="tel" id="telepon" name="telepon" placeholder="08xxxxxxxxxx" value="<?php echo htmlspecialchars($telepon); ?>" required>
         <label for="pesan">Pesan atau pertanyaan</label><textarea id="pesan" name="pesan" rows="5" placeholder="Tuliskan pertanyaan Anda..." required><?php echo htmlspecialchars($pesan); ?></textarea>
